@@ -18,8 +18,10 @@ exports.actions = function(req, res, ss) {
       } else {
         return res(false);
       }
+    },
+    square: function(number) {
+      res(number * number);
     }
-
   };
 
 };
