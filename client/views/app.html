@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app lang="en">
   <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
     <meta charset="utf-8"/>
     <SocketStream/>
     <title>Welcome</title>
   </head>
   <body>
     <div id="content">
-      <audio>
-        <source src="/beepbeep.mp3" type="audio/mpeg" />
-        <source src="/beepbeep.ogg" type="audio/ogg" />
-      </audio>
+      <div ng-controller="AudioCtrl">
+        <form ng-submit="playAudio()">
+          <input type="submit" value="Play Audio"/>
+        </form>
+      </div>
       <a href="https://github.com/socketstream/socketstream">
         <img src="/images/logo.png" alt="SocketStream Logo" width="160" height="160">
       </a>
