@@ -6,11 +6,11 @@ function AudioCtrl($scope) {
   $scope.playAudio = function() {
     console.log("Play Audio")
     // mp3 does not work in firefox
-    //audio.type = "audio/mpeg"
-    //audio.src = "/beepbeep.mp3"
+    audio.type = "audio/mpeg"
+    audio.src = "/DingDong.mp3"
     // ogg works in both firefox and chrome
-    audio.type = "audio/ogg"
-    audio.src = "/beepbeep.ogg"
+    //audio.type = "audio/ogg"
+    //audio.src = "/beepbeep.ogg"
     audio.play()
   };
 }
