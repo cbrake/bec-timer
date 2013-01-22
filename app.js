@@ -32,4 +32,6 @@ server.listen(3000);
 // Start SocketStream
 ss.start(server);
 
+console.log("Started server on port 3000")
+
 
