@@ -4,15 +4,64 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
     <script src="audio.js"></script>
     <title>Welcome</title>
+    <link href="bootstrap_2013-01-30/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="bootstrap_2013-01-30/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
   <body>
-    <div id="content">
-      <div ng-controller="AudioCtrl">
-        <form ng-submit="playAudio()">
-          <input type="submit" value="Test Audio"/>
-        </form>
+    <div class="container-narrow">
+      <div class="jumbotron">
+        <h1>BEC Timer</h1>
+        <p class="lead">
+          Simple timer that sounds every 15 minutes.  Can be used with 
+          the <a href="http://davidseah.com/blog/node/the-emergent-task-timer/"> Emergent Task Timer</a>.
+          Should work with modern versions of Firefox or Chrome.  Uses only HTML/JS -- no Flash.
+        </p>
+        <div ng-controller="AudioCtrl">
+          <form ng-submit="playAudio()">
+            <input class="btn btn-large btn-success" type="submit" value="Test Audio"/>
+          </form>
+        </div>
       </div>
     </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="bootstrap_2013-01-30/js/bootstrap.min.js"></script>
   </body>
 </html>
 
