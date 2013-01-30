@@ -1,9 +1,20 @@
 function AudioCtrl($scope) {
   console.log('AudioCtrl')
 
-  var audio = new Audio();
-  audio.type = "audio/mpeg"
-  audio.src = "/DingDong.mp3"
+  //var audio = new Audio();
+  var audio = document.createElement('audio');
+  var source = document.createElement('source');
+  if (audio.canPlayType('audio/mpeg;')) {
+    console.log('MP3 support detected');
+    source.type = "audio/mpeg"
+    source.src = "/DingDong.mp3"
+  } else {
+    console.log('falling back to OGG support');
+    source.type = "audio/ogg"
+    source.src = "/DingDong.ogg"
+  }
+  audio.appendChild(source)
+  $scope.audio = audio
 
   $scope.schedule_next_ding = function() {
     var d = new Date();
@@ -15,14 +26,15 @@ function AudioCtrl($scope) {
   }
 
   $scope.timeout = function() {
-    audio.play()
+    $scope.audio.play()
     $scope.schedule_next_ding();
   }
 
   $scope.playAudio = function() {
     console.log("Play Audio")
-    audio.play()
+    $scope.audio.play()
   };
 
   $scope.schedule_next_ding()
 }
+
