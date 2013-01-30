@@ -1,37 +1,14 @@
 // My SocketStream 0.3 app
 
-var http = require('http'),
-    ss = require('socketstream');
+var express = require('express'),
+    path = require('path')
 
-// Define a single-page client called 'main'
-ss.client.define('main', {
-  view: 'app.html',
-  css:  ['libs/reset.css', 'app.styl'],
-  code: ['libs/jquery.min.js', 'libs/audio.js', 'app'],
-  tmpl: '*'
-});
+var port = 3000
 
-// Serve this client on the root URL
-ss.http.route('/', function(req, res){
-  res.serveClient('main');
-});
+var app = express()
 
-// Code Formatters
-ss.client.formatters.add(require('ss-stylus'));
+app.use('/', express.static(path.join(__dirname, 'public')))
 
-// Use server-side compiled Hogan (Mustache) templates. Others engines available
-ss.client.templateEngine.use(require('ss-hogan'));
-
-// Minimize and pack assets if you type: SS_ENV=production node app.js
-if (ss.env === 'production') ss.client.packAssets();
-
-// Start web server
-var server = http.Server(ss.http.middleware);
-server.listen(3000);
-
-// Start SocketStream
-ss.start(server);
-
-console.log("Started server on port 3000")
-
+console.log('server started on port ' + port)
+app.listen(port)
 

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="audio.js"></script>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div id="content">
+      <div ng-controller="AudioCtrl">
+        <form ng-submit="playAudio()">
+          <input type="submit" value="Test Audio"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+

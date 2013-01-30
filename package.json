@@ -1,13 +1,13 @@
 {
   "name": "bec-timer",
-  "description": "An awesome real time application",
+  "description": "A simple timer that dings every 15 minutes",
   "version": "0.0.1",
-  "author": "Me <me@mydomain.com>",
-  "private": true,
-  "engines": { "node": ">= 0.6.0" },
+  "author": "Cliff Brake <cbrake@bec-systems.com>",
+  "engines": { "node": ">= 0.8.0" },
   "dependencies": {
-    "socketstream": "0.3.x",
-    "ss-stylus": "0.1.x",
-    "ss-hogan": "0.1.x"
+    "express": "3.x.x"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
