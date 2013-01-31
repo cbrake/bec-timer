@@ -1,3 +1,5 @@
+// Copyright Cliff Brake <cbrake@bec-systems.com>, GPL v3
+
 function AudioCtrl($scope) {
   console.log('AudioCtrl')
 

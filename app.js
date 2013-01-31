@@ -1,4 +1,4 @@
-// My SocketStream 0.3 app
+// Copyright Cliff Brake <cbrake@bec-systems.com>, GPL v3
 
 var express = require('express'),
     path = require('path')
